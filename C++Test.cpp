@@ -1,12 +1,16 @@
 #include <iostream>
-using namespace std;
+
+typedef std::string string_t;
 
 int main(){
     double radius = 5;
     const double PI = 3.1415962;
     double circumference = 2 * PI * radius;
 
-    cout << circumference << "cm" << '\n';
+    string_t string = "Typedef testing";
+
+    std::cout << string << '\n';
+    std::cout << circumference << "cm" << '\n';
 
     return 0;
 }
