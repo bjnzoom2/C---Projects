@@ -1,18 +1,16 @@
 #include <iostream>
+using namespace std;
+
+namespace radius2{
+    double radius = 7;
+}
 
 int main(){
-    int x = 5;
-    int y = 2;
-    double z = 6.3;
-    char grade = 'A';
-    bool alive = true;
+    double radius = 5;
+    const double PI = 3.1415962;
+    double circumference = 2 * PI * radius2::radius;
 
-    std::string text = "This is C++";
-
-    std::cout << x + y + z << '\n';
-    std::cout << grade << '\n';
-    std::cout << alive << '\n';
-    std::cout << "Hello, " << text << '\n';
+    cout << circumference << "cm" << '\n';
 
     return 0;
 }
