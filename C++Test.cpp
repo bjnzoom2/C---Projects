@@ -1,15 +1,18 @@
 #include <iostream>
+#include <cmath>
 
 int main(){
-    int score;
-    std::cout << "Enter score: ";
-    std::cin >> score;
+    double opposite;
+    std::cout << "Enter opposite length: ";
+    std::cin >> opposite;
 
-    int maxScore;
-    std::cout << "Enter max score: ";
-    std::cin >> maxScore;
+    double adjacent;
+    std::cout << "Enter adjacent length: ";
+    std::cin >> adjacent;
 
-    std::cout << score / (double) maxScore * 100 << "%" << '\n';
+    double hypotenuse = sqrt(pow(opposite, 2) + pow(adjacent, 2));
+
+    std::cout << "Hypotenuse length is " << hypotenuse << '\n';
 
     return 0;
 }
