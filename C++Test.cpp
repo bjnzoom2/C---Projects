@@ -1,16 +1,28 @@
 #include <iostream>
 
 int main() {
-    int age;
-    std::cout << "How old are you?" << '\n';
-    std::cin >> age;
+    char grade;
+    std::cout << "Enter grade: ";
+    std::cin >> grade;
 
-    if (age >= 21) {
-        std::cout << "You may vote" << '\n';
-    } else if (age < 1) {
-        std::cout << "You have not even been born yet" << '\n';
-    } else {
-        std::cout << "You are not old enough to vote" << '\n';
+    switch(grade) {
+        case 'A':
+            std::cout << "Well done!!" << '\n';
+            break;
+        case 'B':
+            std::cout << "Not bad!" << '\n';
+            break;
+        case 'C':
+            std::cout << "Its fine I suppose." << '\n';
+            break;
+        case 'D':
+            std::cout << "You have to work harder." << '\n';
+            break;
+        case 'F':
+            std::cout << "Leave." << '\n';
+            break;
+        default:
+            std::cout << "Invalid grade" << '\n';
     }
 
     return 0;
