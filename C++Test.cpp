@@ -1,9 +1,10 @@
 #include <iostream>
 
 int main(){
-    int x = (double) 12.34;
+    int score = 15;
+    int maxScore = 20;
 
-    std::cout << x << '\n';
+    std::cout << score / (double) maxScore * 100 << "%" << '\n';
 
     return 0;
 }
