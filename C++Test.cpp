@@ -1,10 +1,9 @@
 #include <iostream>
 
 int main(){
-    int num = 15;
-    num %= 4;
+    int x = (double) 12.34;
 
-    std::cout << num << '\n';
+    std::cout << x << '\n';
 
     return 0;
 }
