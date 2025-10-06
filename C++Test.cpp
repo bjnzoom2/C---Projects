@@ -1,11 +1,11 @@
 #include <iostream>
 
 int main() {
-    int score;
-    std::cout << "Enter score: ";
-    std::cin >> score;
+    int num;
+    std::cout << "Enter number: ";
+    std::cin >> num;
 
-    score >= 50 ? std::cout << "You passed" << '\n' : std::cout << "You failed" << '\n';
+    num % 2 == 0 ? std::cout << "Number is even" << '\n' : std::cout << "Number is odd" << '\n';
 
     return 0;
 }
