@@ -5,7 +5,7 @@ int main() {
     std::cout << "Enter number: ";
     std::cin >> num;
 
-    num % 2 == 0 ? std::cout << "Number is even" << '\n' : std::cout << "Number is odd" << '\n';
+    num % 2 ? std::cout << "Number is odd" << '\n' : std::cout << "Number is even" << '\n';
 
     return 0;
 }
