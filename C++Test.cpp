@@ -6,10 +6,10 @@ int main() {
 
     int counter = 0;
     
-    while (text.empty()) {
+    do {
         std::cout << "Enter text: ";
         std::getline(std::cin, text);
-    }
+    } while (text.empty());
 
     while (counter < text.length()) {
         counter += 1;
