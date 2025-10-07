@@ -2,14 +2,15 @@
 #include <string>
 
 int main() {
-    std::string text;
-    
-    do {
-        std::cout << "Enter text: ";
-        std::getline(std::cin, text);
-    } while (text.empty());
+    for (int i = 1; i <= 20; i++) {
+        if (i == 10) {
+            continue;
+        }
 
-    for (int i = 1; i <= text.length(); i++) {
+        if (i == 15) {
+            break;
+        }
+
         std::cout << i << ' ';
     }
 
