@@ -1,18 +1,16 @@
 #include <iostream>
-#include <string>
+#include <ctime>
 
 int main() {
-    for (int i = 1; i <= 20; i++) {
-        if (i == 10) {
-            continue;
-        }
+    srand(time(NULL));
 
-        if (i == 15) {
-            break;
-        }
+    int dice1 = (rand() % 6) + 1;
+    int dice2 = (rand() % 6) + 1;
+    int dice3 = (rand() % 6) + 1;
 
-        std::cout << i << ' ';
-    }
+    std::cout << dice1 << '\n';
+    std::cout << dice2 << '\n';
+    std::cout << dice3 << '\n';
 
     return 0;
 }
