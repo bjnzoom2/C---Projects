@@ -3,17 +3,14 @@
 
 int main() {
     std::string text;
-
-    int counter = 0;
     
     do {
         std::cout << "Enter text: ";
         std::getline(std::cin, text);
     } while (text.empty());
 
-    while (counter < text.length()) {
-        counter += 1;
-        std::cout << counter << ' ';
+    for (int i = 1; i <= text.length(); i++) {
+        std::cout << i << ' ';
     }
 
     return 0;
