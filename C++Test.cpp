@@ -10,6 +10,13 @@ double deposit() {
     std::cout << "Enter deposit amount: $";
     std::cin >> amount;
 
+    if (amount > 0) {
+        return amount;
+    } else {
+        std::cout << "Invalid amount" << '\n';
+        return 0;
+    }
+
     return amount;
 }
 
