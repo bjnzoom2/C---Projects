@@ -1,20 +1,18 @@
 #include <iostream>
 #include <ctime>
 
-void rollDice() {
+void rollDice(int times) {
     srand(time(NULL));
+    int dice;
 
-    int dice1 = (rand() % 6) + 1;
-    int dice2 = (rand() % 6) + 1;
-    int dice3 = (rand() % 6) + 1;
-
-    std::cout << dice1 << '\n';
-    std::cout << dice2 << '\n';
-    std::cout << dice3 << '\n';
+    for (int i = 1; i <= times; i++) {
+        dice = (rand() % 6) + 1;
+        std::cout << dice << '\n';
+    }
 }
 
 int main() {
-    rollDice();
+    rollDice(4);
 
     return 0;
 }
