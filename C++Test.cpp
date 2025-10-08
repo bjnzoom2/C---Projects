@@ -1,25 +1,34 @@
 #include <iostream>
-#include <string>
+#include <cmath>
 
-std::string concatString(std::string string1, std::string string2) {
-    return string1 + ' ' + string2;
+double getVolume(double length) {
+    double volume = pow(length, 3);
+
+    return volume;
+}
+
+double getVolume(double length, double width, double height) {
+    double volume = length * width * height;
+
+    return volume;
 }
 
 int main() {
-    std::string string1;
-    std::string string2;
+    double length;
+    double width;
+    double height;
 
-    do {
-        std::cout << "Enter first string: ";
-        std::getline(std::cin, string1);
-    } while (string1.empty());
+    std::cout << "Enter length: ";
+    std::cin >> length;
 
-    do {
-        std::cout << "Enter second string: ";
-        std::getline(std::cin, string2);
-    } while(string2.empty());
+    std::cout << "Enter width: ";
+    std::cin >> width;
 
-    std::cout << concatString(string1, string2) << '\n';
+    std::cout << "Enter height: ";
+    std::cin >> height;
+
+    std::cout << getVolume(length) << "cm^3" << '\n';
+    std::cout << getVolume(length, width, height) << "cm^3" << '\n';
 
     return 0;
 }
