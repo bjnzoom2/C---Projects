@@ -1,11 +1,19 @@
 #include <iostream>
 
 int main() {
-    double array[] = {100, 12, 1343.123};
+    int num = 12;
+    double num2 = 10.2;
+    char character = 'A';
+    bool boolean = true;
+    std::string string = "String";
+    int array[] = {1, 2, 3, 4};
 
-    std::cout << array[0] << '\n';
-    std::cout << array[1] << '\n';
-    std::cout << array[2] << '\n';
+    std::cout << sizeof(num) << " bytes\n";
+    std::cout << sizeof(num2) << " bytes\n";
+    std::cout << sizeof(character) << " bytes\n";
+    std::cout << sizeof(boolean) << " bytes\n";
+    std::cout << sizeof(string) << " bytes\n";
+    std::cout << sizeof(array) << " bytes\n";
 
     return 0;
 }
