@@ -1,15 +1,24 @@
 #include <iostream>
 
-int main() {
-    const int SIZE = 50;
-
-    int array[SIZE];
-    std::fill(array, array + SIZE / 2, 50);
-    std::fill(array + SIZE / 2, array + SIZE, 100);
-
-    for (int num : array) {
-        std::cout << num << '\n';
+double sum(double array[], int size) {
+    double sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += array[i];
     }
+
+    return sum;
+}
+
+int main() {
+    double array[3];
+    int size = sizeof(array) / sizeof(array[0]);
+
+    for (int i = 0; i < size; i++) {
+        std::cout << "Enter #" << i + 1 << ": ";
+        std::cin >> array[i];
+    }
+
+    std::cout << sum(array, size) << '\n';
 
     return 0;
 }
