@@ -1,19 +1,25 @@
 #include <iostream>
 
-double sum(double array[], int size) {
-    int sum = 0;
+void findElement(double array[], int size, double numChoice) {
     for (int i = 0; i < size; i++) {
-        sum += array[i];
+        if (array[i] == numChoice) {
+            std::cout << numChoice << " has been found at index " << i << " of " << array << '\n';
+            break;
+        } else if (i == size - 1) {
+            std::cout << numChoice << " was not found in " << array << '\n';
+        }
     }
-
-    return sum;
 }
 
 int main() {
-    double array[] = {23, 19, 2006};
-    int size = sizeof(array) / sizeof(int);
+    double array[] = {13, 2, 65, 101};
+    int size = sizeof(array) / sizeof(array[0]);
 
-    std::cout << sum(array, size) << '\n';
+    double numChoice;
+    std::cout << "Enter number: ";
+    std::cin >> numChoice;
+
+    findElement(array, size, numChoice);
 
     return 0;
 }
