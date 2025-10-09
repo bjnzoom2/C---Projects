@@ -1,24 +1,17 @@
 #include <iostream>
 
-double sum(double array[], int size) {
-    double sum = 0;
-    for (int i = 0; i < size; i++) {
-        sum += array[i];
-    }
-
-    return sum;
-}
-
 int main() {
-    double array[3];
-    int size = sizeof(array) / sizeof(array[0]);
+    int array2d[][2] = {{1, 2},
+                        {3, 4}};
+    int rows = sizeof(array2d) / sizeof(array2d[0]);
+    int columns = sizeof(array2d[0]) / sizeof(array2d[0][0]);
 
-    for (int i = 0; i < size; i++) {
-        std::cout << "Enter #" << i + 1 << ": ";
-        std::cin >> array[i];
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < columns; j++) {
+            std::cout << array2d[i][j] << ' ';
+        }
+        std::cout << '\n';
     }
-
-    std::cout << sum(array, size) << '\n';
 
     return 0;
 }
