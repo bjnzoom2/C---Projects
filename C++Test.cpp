@@ -1,13 +1,19 @@
 #include <iostream>
 
-int main() {
-    std::string string = "Hello";
-    int num = 12;
-    bool boolean = true;
+void swap(int &num1, int &num2) {
+    int temp = num1;
+    num1 = num2;
+    num2 = temp;
+}
 
-    std::cout << &string << '\n';
-    std::cout << &num << '\n';
-    std::cout << &boolean << '\n';
+int main() {
+    int num1 = 5;
+    int num2 = 15;
+
+    swap(num1, num2);
+
+    std::cout << num1 << '\n';
+    std::cout << num2 << '\n';
 
     return 0;
 }
