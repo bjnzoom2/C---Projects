@@ -1,17 +1,17 @@
 #include <iostream>
 
 int main() {
+    int *pointer = nullptr;
     int num = 12;
-    int *pNum = &num;
 
-    int array[] = {1, 3, 5, 7, 9};
-    int *pArray = array;
+    pointer = &num;
 
-    std::cout << pNum << '\n';
-    std::cout << *pNum << '\n';
-
-    std::cout << pArray << '\n';
-    std::cout << *pArray << '\n';
+    if (pointer != nullptr) {
+        std::cout << pointer << '\n';
+        std::cout << *pointer << '\n';
+    } else {
+        std::cout << "Pointer is a null pointer\n";
+    }
 
     return 0;
 }
