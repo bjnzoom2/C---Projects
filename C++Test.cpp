@@ -5,16 +5,20 @@ struct object {
     double volume; // m^3
 };
 
+double getDensity(object object) {
+    return object.mass / object.volume;
+}
+
 int main() {
     object ball;
     ball.mass = 12;
     ball.volume = 5;
 
-    double ballDensity = ball.mass / ball.volume;
+    double density = getDensity(ball);
 
     std::cout << ball.mass << " kg" << '\n';
     std::cout << ball.volume << " m^3" << '\n';
-    std::cout << ballDensity << " kg/m^3" << '\n';
+    std::cout << density << " kg/m^3" << '\n';
 
     return 0;
 }
