@@ -67,10 +67,10 @@ char checkWinner(char *spaces, char player, char computer) {
 
 bool checkTie(char *spaces) {
     for (int i = 0; i < 9; i++) {
-            if (spaces[i] == ' ') {
-                return false;
-            }
+        if (spaces[i] == ' ') {
+            return false;
         }
+    }
 
     return true;
 }
