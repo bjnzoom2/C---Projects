@@ -1,15 +1,20 @@
 #include <iostream>
 
-int factorial(int num) {
-    if (num > 1) {
-        return num * factorial(num - 1);
-    } else {
-        return 1;
-    }
+template <typename T, typename U>
+
+auto max(T x, U y) {
+    return (x > y) ? x : y;
+}
+
+template <typename T, typename U>
+
+auto min(T x, U y) {
+    return (x < y) ? x : y;
 }
 
 int main() {
-    std::cout << factorial(5) << '\n';
+    std::cout << max(1, 1.2) << '\n';
+    std::cout << min(1, 1.2) << '\n';
 
     return 0;
 }
