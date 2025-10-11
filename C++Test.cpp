@@ -65,18 +65,14 @@ char checkWinner(char *spaces, char player, char computer) {
     }
 }
 
-bool checkTie(char *spaces, double &occupied) {
-    for (int i = 0; i < sizeof(spaces) / sizeof(spaces[0]); i++) {
-            if (spaces[i] != ' ') {
-                occupied += 0.6;
+bool checkTie(char *spaces) {
+    for (int i = 0; i < 9; i++) {
+            if (spaces[i] == ' ') {
+                return false;
             }
         }
 
-    if (occupied >= 9) {
-        return true;
-    } else {
-        return false;
-    }
+    return true;
 }
 
 int main() {
@@ -98,43 +94,41 @@ int main() {
             break;
         default:
             std::cout << "Invalid icon" << '\n';
+            running = false;
     }
 
     drawBoard(spaces);
 
     while (running) {
-        double occupied = 0;
         bool tie;
         char winner;
         playerMove(spaces, player);
         winner = checkWinner(spaces, player, computer);
-        tie = checkTie(spaces, occupied);
+        tie = checkTie(spaces);
 
         if (winner == player) {
-            std::cout << "Player has won" << '\n';
+            std::cout << "Player has won\n";
             break;
         } else if (winner == computer) {
-            std::cout << "Computer has won" << '\n';
+            std::cout << "Computer has won\n";
             break;
-        }
-
-        if (tie) {
+        } else if (tie) {
+            std::cout << "It's a tie\n";
             break;
         }
 
         computerMove(spaces, computer);
         winner = checkWinner(spaces, player, computer);
-        tie = checkTie(spaces, occupied);
+        tie = checkTie(spaces);
 
         if (winner == player) {
-            std::cout << "Player has won" << '\n';
+            std::cout << "Player has won\n";
             break;
         } else if (winner == computer) {
-            std::cout << "Computer has won" << '\n';
+            std::cout << "Computer has won\n";
             break;
-        }
-
-        if (tie) {
+        } else if (tie) {
+            std::cout << "It's a tie\n";
             break;
         }
     }
