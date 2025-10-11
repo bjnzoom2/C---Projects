@@ -13,7 +13,7 @@ class Object {
             return mass * acceleration;
         }
 
-        double getTotalForce() {
+        double getImpulse() {
             return getAccelerationForce() * counter;
         }
 
@@ -24,7 +24,7 @@ class Object {
             std::cout << "Acceleration: " << acceleration << " m/s^2\n";
             std::cout << "Speed: " << speed << " m/s\n";
             std::cout << "Acceleration Force: " << getAccelerationForce() << " N\n";
-            std::cout << "Total Force: " << getTotalForce() << " N\n\n";
+            std::cout << "Impulse: " << getImpulse() << " N-s\n\n";
         }
     
     Object(double mass, double speed, double acceleration) {
