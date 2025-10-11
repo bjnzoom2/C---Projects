@@ -17,6 +17,7 @@ class Object {
 
         void run() {
             speed += acceleration;
+            std::cout << "Mass: " << mass << " kg\n";
             std::cout << "Acceleration: " << acceleration << " m/s\n";
             std::cout << "Speed: " << speed << " m/s\n";
             std::cout << "Force: " << getForce() << " N\n\n"; 
@@ -26,7 +27,7 @@ class Object {
 int main() {
     bool running = true;
     Object ball;
-    ball.mass = 10;
+    ball.mass = 5;
 
     while (running) {
         ball.run();
