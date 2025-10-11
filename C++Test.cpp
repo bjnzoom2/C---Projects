@@ -1,7 +1,7 @@
 #include <iostream>
 #include <windows.h>
 
-int counter = 0;
+int seconds = 0;
 
 class Object {
     public:
@@ -14,12 +14,13 @@ class Object {
         }
 
         double getImpulse() {
-            return getForce() * counter;
+            return getForce() * seconds;
         }
 
         void run() {
-            counter++;
+            seconds++;
             speed += acceleration;
+            std::cout << "Time: " << seconds << " s\n";
             std::cout << "Mass: " << mass << " kg\n";
             std::cout << "Acceleration: " << acceleration << " m/s^2\n";
             std::cout << "Speed: " << speed << " m/s\n";
