@@ -1,28 +1,37 @@
 #include <iostream>
+#include <windows.h>
 
-enum Animal {dog = 0, cat = 1, bird = 2, fish = 3, hamster = 4};
+class Object {
+    public:
+        double mass = 1; // kg
+        double speed = 0; // m/s
+        double acceleration = 0; // m/s
+
+        void accelerate(double aSpeed) {
+            acceleration += aSpeed;
+        }
+
+        double getForce() {
+            return mass * acceleration;
+        }
+
+        void run() {
+            speed += acceleration;
+            std::cout << "Acceleration: " << acceleration << " m/s\n";
+            std::cout << "Speed: " << speed << " m/s\n";
+            std::cout << "Force: " << getForce() << " N\n\n"; 
+        }
+};
 
 int main() {
-    Animal pet = dog;
+    bool running = true;
+    Object ball;
+    ball.mass = 10;
 
-    switch(pet) {
-        case 0:
-            std::cout << "It's a dog\n";
-            break;
-        case 1:
-            std::cout << "It's a cat\n";
-            break;
-        case 2:
-            std::cout << "It's a brid\n";
-            break;
-        case 3:
-            std::cout << "It's a fish\n";
-            break;
-        case 4:
-            std::cout << "It's a hamster\n";
-            break;
-        default:
-            std::cout << "Invalid pet\n";
+    while (running) {
+        ball.run();
+        ball.accelerate(1);
+        Sleep(1000);
     }
 
     return 0;
