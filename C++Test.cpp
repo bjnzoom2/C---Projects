@@ -1,23 +1,15 @@
 #include <iostream>
-#include <ctime>
+
+int factorial(int num) {
+    if (num > 1) {
+        return num * factorial(num - 1);
+    } else {
+        return 1;
+    }
+}
 
 int main() {
-    srand(time(NULL));
-
-    int *pArray = nullptr;
-
-    int size;
-    std::cout << "Enter array size: ";
-    std::cin >> size;
-
-    pArray = new int[size];
-    
-    for (int i = 0; i < size; i++) {
-        pArray[i] = rand();
-        std::cout << pArray[i] << ' ';
-    }
-
-    delete[] pArray;
+    std::cout << factorial(5) << '\n';
 
     return 0;
 }
