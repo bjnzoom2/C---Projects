@@ -1,20 +1,20 @@
 #include <iostream>
 
-template <typename T, typename U>
-
-auto max(T x, U y) {
-    return (x > y) ? x : y;
-}
-
-template <typename T, typename U>
-
-auto min(T x, U y) {
-    return (x < y) ? x : y;
-}
+struct object {
+    double mass; // kg
+    double volume; // m^3
+};
 
 int main() {
-    std::cout << max(1, 1.2) << '\n';
-    std::cout << min(1, 1.2) << '\n';
+    object ball;
+    ball.mass = 12;
+    ball.volume = 5;
+
+    double ballDensity = ball.mass / ball.volume;
+
+    std::cout << ball.mass << " kg" << '\n';
+    std::cout << ball.volume << " m^3" << '\n';
+    std::cout << ballDensity << " kg/m^3" << '\n';
 
     return 0;
 }
