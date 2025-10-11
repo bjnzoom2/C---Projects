@@ -1,24 +1,29 @@
 #include <iostream>
 
-struct object {
-    double mass; // kg
-    double volume; // m^3
-};
-
-double getDensity(object object) {
-    return object.mass / object.volume;
-}
+enum Animal {dog = 0, cat = 1, bird = 2, fish = 3, hamster = 4};
 
 int main() {
-    object ball;
-    ball.mass = 12;
-    ball.volume = 5;
+    Animal pet = dog;
 
-    double density = getDensity(ball);
-
-    std::cout << ball.mass << " kg" << '\n';
-    std::cout << ball.volume << " m^3" << '\n';
-    std::cout << density << " kg/m^3" << '\n';
+    switch(pet) {
+        case 0:
+            std::cout << "It's a dog\n";
+            break;
+        case 1:
+            std::cout << "It's a cat\n";
+            break;
+        case 2:
+            std::cout << "It's a brid\n";
+            break;
+        case 3:
+            std::cout << "It's a fish\n";
+            break;
+        case 4:
+            std::cout << "It's a hamster\n";
+            break;
+        default:
+            std::cout << "Invalid pet\n";
+    }
 
     return 0;
 }
