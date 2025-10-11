@@ -9,10 +9,6 @@ class Object {
         double speed = 0; // m/s
         double acceleration = 0; // m/s
 
-        void accelerate(double a) {
-            acceleration = a;
-        }
-
         double getAccelerationForce() {
             return mass * acceleration;
         }
@@ -30,23 +26,29 @@ class Object {
             std::cout << "Acceleration Force: " << getAccelerationForce() << " N\n";
             std::cout << "Total Force: " << getTotalForce() << " N\n\n";
         }
+    
+    Object(double mass, double speed, double acceleration) {
+        this -> mass = mass;
+        this -> speed = speed;
+        this -> acceleration = acceleration;
+    }
 };
 
 int main() {
     bool running = true;
-    Object ball;
 
-    ball.mass;
+    double mass;
     std::cout << "Enter mass: ";
-    std::cin >> ball.mass;
+    std::cin >> mass;
 
-    double a;
+    double acceleration;
     std::cout << "Enter acceleration: ";
-    std::cin >> a;
+    std::cin >> acceleration;
     std::cout << '\n';
 
+    Object ball(mass, 0, acceleration);
+
     while (running) {
-        ball.accelerate(a);
         ball.run();
         Sleep(1000);
     }
