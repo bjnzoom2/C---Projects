@@ -28,6 +28,8 @@ class Object {
             std::cout << "Impulse: " << getImpulse() << " N-s\n\n";
         }
     
+    Object() {};
+       
     Object(double mass, double speed, double acceleration) {
         this -> mass = mass;
         this -> speed = speed;
