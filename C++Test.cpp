@@ -1,59 +1,53 @@
 #include <iostream>
-#include <windows.h>
+#include <Windows.h>
 
-int seconds = 0;
+enum Food {carrot = 4, chicken = 6, beef = 8};
 
-class Object {
+class Animal {
     public:
-        double mass = 1; // kg
-        double speed = 0; // m/s
-        double acceleration = 0; // m/s
+        bool alive = true;
+        double hungerLevel = 10;
 
-        double getForce() {
-            return mass * acceleration;
-        }
+    void eat(Food food) {
+        hungerLevel += food;
+        std::cout << "Hunger level: " << hungerLevel << '\n';
+    }
+};
 
-        double getImpulse() {
-            return getForce() * seconds;
-        }
-
-        void run() {
-            seconds++;
-            speed += acceleration;
-            std::cout << "Time: " << seconds << " s\n";
-            std::cout << "Mass: " << mass << " kg\n";
-            std::cout << "Acceleration: " << acceleration << " m/s^2\n";
-            std::cout << "Speed: " << speed << " m/s\n";
-            std::cout << "Force: " << getForce() << " N\n";
-            std::cout << "Impulse: " << getImpulse() << " N-s\n\n";
-        }
+class Dog : public Animal {
+    public:
     
-    Object() {};
-       
-    Object(double mass, double speed, double acceleration) {
-        this -> mass = mass;
-        this -> speed = speed;
-        this -> acceleration = acceleration;
+    void bark() {
+        if (alive) {
+            std::cout << "Woof" << '\n';
+        }
+    }
+
+    void checkHunger() {
+        if (alive) {
+            std::cout << "Hunger level: " << hungerLevel << '\n';
+
+            if (hungerLevel <= 0) {
+                alive = false;
+            } else if (hungerLevel <= 3) {
+                bark();
+            } else if (hungerLevel > 10) {
+                hungerLevel = 10;
+            }
+
+            hungerLevel -= 1;
+        }
     }
 };
 
 int main() {
     bool running = true;
 
-    double mass;
-    std::cout << "Enter mass: ";
-    std::cin >> mass;
-
-    double acceleration;
-    std::cout << "Enter acceleration: ";
-    std::cin >> acceleration;
-    std::cout << '\n';
-
-    Object ball(mass, 0, acceleration);
+    Dog dog1;
 
     while (running) {
-        ball.run();
-        Sleep(1000);
+        dog1.checkHunger();
+        Sleep(5000);
     }
 
     return 0;
