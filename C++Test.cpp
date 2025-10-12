@@ -1,54 +1,16 @@
 #include <iostream>
-#include <Windows.h>
-
-enum Food {carrot = 4, chicken = 6, beef = 8};
-
-class Animal {
-    public:
-        bool alive = true;
-        double hungerLevel = 10;
-
-    void eat(Food food) {
-        hungerLevel += food;
-        std::cout << "Hunger level: " << hungerLevel << '\n';
-    }
-};
-
-class Dog : public Animal {
-    public:
-    
-    void bark() {
-        if (alive) {
-            std::cout << "Woof" << '\n';
-        }
-    }
-
-    void checkHunger() {
-        if (alive) {
-            std::cout << "Hunger level: " << hungerLevel << '\n';
-
-            if (hungerLevel <= 0) {
-                alive = false;
-            } else if (hungerLevel <= 3) {
-                bark();
-            } else if (hungerLevel > 10) {
-                hungerLevel = 10;
-            }
-
-            hungerLevel -= 1;
-        }
-    }
-};
+#include <vector>
 
 int main() {
-    bool running = true;
+    std::vector<int> vector1 = {1, 2, 3, 4, 5};
+    vector1.insert(vector1.begin() + 1, 6);
+    vector1.erase(vector1.begin() + 3);
 
-    Dog dog1;
-
-    while (running) {
-        dog1.checkHunger();
-        Sleep(5000);
+    for (int value : vector1) {
+        std::cout << value << ' ';
     }
+
+    std::cout << '\n';
 
     return 0;
 }
