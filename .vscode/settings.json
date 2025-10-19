@@ -52,6 +52,8 @@
         "string": "cpp",
         "iomanip": "cpp",
         "algorithm": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "array": "cpp",
+        "list": "cpp"
     }
 }
