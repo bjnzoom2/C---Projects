@@ -1,5 +1,6 @@
 #include <iostream>
 #include <fstream>
+#include <string>
 
 int main() {
     std::ifstream inFile {"Read.txt"};
@@ -9,8 +10,8 @@ int main() {
         return -1;
     }
     std::string fileInput = "";
-    while (inFile >> fileInput) {
-        std::cout << fileInput << ' ';
+    while (std::getline(inFile, fileInput)) {
+        std::cout << fileInput << '\n';
     }
     
     std::ofstream file {"File.txt"};
