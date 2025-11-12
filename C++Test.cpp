@@ -1,28 +1,42 @@
 #include <iostream>
-#include <fstream>
-#include <string>
+
+class Square {
+    private:
+    int x;
+
+    public:
+    Square(int _x) : x(_x) {}
+
+    void setX(int _x) {x = _x;}
+    int getX() {return x;}
+    virtual void printType() {std::cout << "Square\n";}
+};
+
+class Rectangle : public Square{
+    private:
+    int y;
+
+    public:
+    Rectangle(int _x, int _y) : Square(_x) {y = _y;}
+    void setY(int _y) {y = _y;}
+    int getY() {return y;}
+    void printType() {std::cout << "Rectangle\n";}
+};
+
+void func(Square& square) {
+    square.printType();
+    std::cout << square.getX() << '\n';
+}
 
 int main() {
-    std::ifstream inFile {"Read.txt"};
+    Square square(5);
+    Rectangle rect(2, 8);
 
-    if (!inFile) {
-        std::cerr << "File could not be opened for reading\n";
-        return -1;
-    }
-    std::string fileInput = "";
-    while (std::getline(inFile, fileInput)) {
-        std::cout << fileInput << '\n';
-    }
-    
-    std::ofstream file {"File.txt"};
+    Square* sptr = &rect;
+    sptr->printType();
 
-    if (!file) {
-        std::cerr << "File could not be opened for writing\n";
-        return -1;
-    }
-
-    file << "Hello\n";
-    file << "I am a file\n";
+    func(square);
+    func(rect);
 
     return 0;
 }
