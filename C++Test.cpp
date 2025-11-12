@@ -1,42 +1,18 @@
 #include <iostream>
 
-class Square {
-    private:
-    int x;
-
+class Shape {
     public:
-    Square(int _x) : x(_x) {}
-
-    void setX(int _x) {x = _x;}
-    int getX() {return x;}
-    virtual void printType() {std::cout << "Square\n";}
+    virtual void print() = 0;
 };
 
-class Rectangle : public Square{
-    private:
-    int y;
-
+class Triangle : public Shape{
     public:
-    Rectangle(int _x, int _y) : Square(_x) {y = _y;}
-    void setY(int _y) {y = _y;}
-    int getY() {return y;}
-    void printType() {std::cout << "Rectangle\n";}
+    void print() {std::cout << "Triangle\n";}
 };
-
-void func(Square& square) {
-    square.printType();
-    std::cout << square.getX() << '\n';
-}
 
 int main() {
-    Square square(5);
-    Rectangle rect(2, 8);
-
-    Square* sptr = &rect;
-    sptr->printType();
-
-    func(square);
-    func(rect);
+    Triangle tri;
+    tri.print();
 
     return 0;
 }
