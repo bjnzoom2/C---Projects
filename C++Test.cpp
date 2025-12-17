@@ -17,6 +17,10 @@ class Object {
 };
 
 int main() {
+    Object* rPtr = new Object;
+    rPtr->print();
+    delete rPtr;
+
     std::unique_ptr<Object> uSmartPtr = std::make_unique<Object>();
     uSmartPtr->print();
 
