@@ -1,25 +1,30 @@
 #include <iostream>
+#include <memory>
 
-struct Vec3 {
-    float x, y, z;
-};
+class Object {
+    public:
+    Object() {
+        std::cout << "Created\n";
+    }
 
-namespace std {
-    template <typename T>
-    struct is_vec3 : std::false_type {};
-    template <>
-    struct is_vec3<Vec3> : std::true_type {};
+    ~Object() {
+        std::cout << "Destroyed\n";
+    }
+
+    void print() {
+        std::cout << "Object\n";
+    }
 };
 
 int main() {
-    int x = 5;
-    float y = 0.1f;
-    std::cout << std::is_floating_point_v<decltype(x)> << '\n';
-    std::cout << std::is_floating_point_v<decltype(y)> << '\n';
+    std::unique_ptr<Object> uSmartPtr = std::make_unique<Object>();
+    uSmartPtr->print();
 
-    Vec3 vec3;
-    std::cout << std::is_vec3<int>::value << '\n';
-    std::cout << std::is_vec3<decltype(vec3)>::value << '\n';
+    std::shared_ptr<Object> sSmartPtr = std::make_shared<Object>();
+    std::shared_ptr<Object> sPtr0 = sSmartPtr;
+
+    sSmartPtr->print();
+    sPtr0->print();
 
     return 0;
 }
