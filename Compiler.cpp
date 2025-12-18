@@ -64,7 +64,7 @@ std::vector<Token> tokenise(const std::string& input) {
 }
 
 int main() {
-    std::ifstream codeFile{"File.hy"};
+    std::ifstream codeFile{"File.h2"};
 
     if (codeFile.is_open()) {
         std::string inputLine;
