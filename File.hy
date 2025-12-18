@@ -1,2 +1,2 @@
-return 10
-return 21
+x = 15
+return x
